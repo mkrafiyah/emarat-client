@@ -10,7 +10,30 @@ const Dashboard = () => {
         <div className="flex">
             <div className="w-64 min-h-screen bg-blue-400">
                 <ul className="menu">
+                    {
+                        isAdmin? <>
+                               <li>
+                 <NavLink to='/dashboard/adminProfile'>
+                <FaPerson></FaPerson>
+                    Admin Profile</NavLink></li>
                     <li>
+                 <NavLink to='/dashboard/manageProperties'>
+                <FaShoppingCart></FaShoppingCart>
+                    Manage Properties</NavLink></li>
+                    <li>
+                 <NavLink to='/dashboard/manageUsers'>
+                <FaBuilding></FaBuilding>
+                Manage Users</NavLink></li>
+                    <li>
+                 <NavLink to='/dashboard/manageReviews'>
+                <FaBook></FaBook>
+                Manage Reviews</NavLink></li>
+                   
+                           
+                         
+                        </> : 
+                        <>
+                           <li>
                  <NavLink to='/dashboard/profile'>
                 <FaPerson></FaPerson>
                     My Profile</NavLink></li>
@@ -30,9 +53,17 @@ const Dashboard = () => {
                  <NavLink to='/'>
                 <FaHome></FaHome>
                     Home</NavLink></li>
+                        </>
+                    }
+                      <div className="divider"></div>
+                      <li>
+                 <NavLink to='/'>
+                <FaHome></FaHome>
+                    Home</NavLink></li>
+                 
 
                 </ul>
-                <div className="divider"></div>
+                
 
             </div>
              {/* dashboard content */}

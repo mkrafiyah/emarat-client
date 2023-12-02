@@ -22,20 +22,23 @@ const SignUp = () => {
         const password = form.get("password");
         console.log(name, photo,email, password);
 
-        if(password.length < 6){
+        if((password.length < 6) && (!/^(?=[^A-Z]*$)(?=[^\W_]*$)/.test(password)) ){
             Swal.fire({
                 title: "Password too small",
                 text: "Password must be more than 6 character",
                 icon: "question"
               });
               return;
-           }else{
+           }
+           else{
             Swal.fire({
                 title: "Successfull",
                 text: "Registration Successfull",
                 icon: "success"
               });
+              navigate('/')
            }
+          
 
        //create user
        createUser(email, password)
