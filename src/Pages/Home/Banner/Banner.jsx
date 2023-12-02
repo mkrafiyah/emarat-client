@@ -1,5 +1,6 @@
 
 import { FaArrowRight, FaKey, FaMobile } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Banner = () => {
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://ibb.co/RBvg2KH)' }}>
@@ -25,8 +26,10 @@ const Banner = () => {
                         </div>
                     </div>
 
+                    <Link to='/allProperties'>
                     <button className=" btn-ghost items-start text-xl font-normal">Discover More<span><FaArrowRight className="inline ml-3"></FaArrowRight></span>
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

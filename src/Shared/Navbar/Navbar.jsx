@@ -1,13 +1,46 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { FaUserDoctor } from "react-icons/fa6";
 
 
 const Navbar = () => {
+    const {user, logOut} = useContext(AuthContext);
+   
+
+    //logOut
+    
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user)
+                
+
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
+    }
 
   const  navRoutes = <>
-      <li><NavLink><a>Home</a></NavLink></li>
-      <li><NavLink><a>All Properties</a></NavLink></li>
-      <li><NavLink><a>Dashboard</a></NavLink></li>
-      <li><NavLink><a>Login</a></NavLink></li>
+      <li><NavLink to='/'>Home</NavLink></li>
+      <li><NavLink to='/allProperties'>All Properties</NavLink></li>
+      <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+
+      {
+                        user ?
+                            <button onClick={handleSignOut} className="btn">Sign Out</button>
+                            :
+                            <li><NavLink to='/login'>Login</NavLink></li>
+                    }
+                    {
+                        user ? <span>{user.email}
+                            <p>{user.displayName}</p>
+                            <img className="w-10 rounded" src={user.photoURL} alt="" />
+                            <FaUserDoctor className="rounded w-10"></FaUserDoctor>
+                        </span> : ''
+                    }
+     
              
     </>
     return (
@@ -21,16 +54,16 @@ const Navbar = () => {
                       {navRoutes}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">EMARAT</a>
+                <a className="btn btn-ghost text-xl">
+                <img className="w-[60px] h-[60px] border-amber-950 rounded-full gap-0" src="https://i.ibb.co/hXzSvkN/R.jpg" alt="" />
+                    EMARAT</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                   {navRoutes}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+           
         </div>
     );
 };
