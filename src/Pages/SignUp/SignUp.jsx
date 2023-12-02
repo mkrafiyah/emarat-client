@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -9,6 +11,7 @@ const SignUp = () => {
     const [successRegistration, setSuccessRegistration] = useState('');
     const [registrationError, setRegistrationError] = useState('');
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -40,11 +43,22 @@ const SignUp = () => {
            updateUserProfile(email, photo)
            .then(()=>{
             console.log('update profile info')
+            const userInfo ={
+                name: user,
+                email: email
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res=>{
+                if(res.data.insertedId){
+                    console.log('user added')
+                    navigate('/')
+                    e.target.reset();
+                }
+            })
            })
            .catch(err=> console.log(err))
            setSuccessRegistration('successful', result.user);
-           navigate('/')
-           e.target.reset();
+         
            
        })
        .catch(err =>{
@@ -89,9 +103,10 @@ const SignUp = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
+                            <div className="form-control mt-6 mb-6">
                                 <button className="btn bg-sky-500 text-white">Register</button>
                             </div>
+                            <SocialLogin></SocialLogin>
                             <p>Already have an account? Go to <Link className="text-sky-600" to='/login'>Login</Link> </p>
                         </form>
                     </div>

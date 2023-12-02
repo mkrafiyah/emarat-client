@@ -4,6 +4,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 
 const Dashboard = () => {
+
+    const isAdmin = true;
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-blue-400">
@@ -30,6 +32,7 @@ const Dashboard = () => {
                     Home</NavLink></li>
 
                 </ul>
+                <div className="divider"></div>
 
             </div>
              {/* dashboard content */}

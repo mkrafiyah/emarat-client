@@ -2,15 +2,17 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
-    const { user, logIn } = useContext(AuthContext); 
+    const { user, logIn} = useContext(AuthContext); 
     const [successLogin, setSuccessLogin] = useState('');
     const [errorLogin, setErrorLogin] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
+   
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget)
@@ -70,10 +72,8 @@ const Login = () => {
                             <div className="form-control mt-6 mb-6">
                                 <button className="btn bg-sky-500 text-white">Login</button>
                             </div>
-                            <hr />
-                            <div className="form-control mt-6">
-                                <button className="btn bg-sky-500 text-white">Google Login</button>
-                            </div>
+                            <SocialLogin></SocialLogin>
+                            
                             <p>Do not have an account? Go to <Link className="text-sky-600" to='/register'>Register</Link> </p>
                         </form>
 
