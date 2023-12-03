@@ -13,6 +13,9 @@ const AgentAddedProperties = () => {
             .then(data => setAddedProperty(data))
     }, [])
     console.log(addedProperty)
+    const handleAddUpdate = ()=>{
+        //todo
+    }
     return (
         <div className="grid grid-cols-1 gap-5">
            {
@@ -30,7 +33,7 @@ const AgentAddedProperties = () => {
                     <div ><img className="rounded-full h-10 w-10" src={add?.agent_photo} alt="" /></div>
                 </div>
             </div>
-            <button onClick={() => handleAddToWishList(add)}
+            <button onClick={() => handleAddUpdate(add._id)}
                 className="btn btn-success">Update</button>
         </div>)
            }
