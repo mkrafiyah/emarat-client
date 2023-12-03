@@ -10,7 +10,7 @@ const WorkStyle = () => {
             How It works?
     
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 pl-7 md:pl-3 lg:pl-0 md:grid-cols-4 gap-4">
                 <div className="border-r-2">
                     <MdOutlineHomeWork className="text-5xl"></MdOutlineHomeWork>
                    <h2 className="text-3xl text-sky-600">Find real estate</h2>
