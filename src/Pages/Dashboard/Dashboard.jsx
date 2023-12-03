@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import { FaHome, FaShoppingCart } from "react-icons/fa";
 import { FaBook, FaBuilding, FaPerson } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Dashboard = () => {
+   const {user} = useContext(AuthContext)
+//    const [isAdmin] = useAdmin();
+const isAdmin = false;
 
-    const isAdmin = true;
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-blue-400">

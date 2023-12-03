@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaTrashAlt } from "react-icons/fa";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useWishList from "../../hooks/useWishList";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { FaTrashAlt } from "react-icons/fa";
 
 
-const MyReviews = () => {
+const ManageReview = () => {
     const [review, setReview] = useState([]);
     const [ refetch] = useWishList();
     const axiosSecure = useAxiosSecure();
@@ -40,9 +40,8 @@ const MyReviews = () => {
             }
         });
     }
-
     return (
-       <div>
+        <div>
             <h2 className="text-4xl text-center font-bold my-10">Reviews</h2>
    <div className="overflow-x-auto">
   <table className="table">
@@ -101,4 +100,4 @@ const MyReviews = () => {
     );
 };
 
-export default MyReviews;
+export default ManageReview;

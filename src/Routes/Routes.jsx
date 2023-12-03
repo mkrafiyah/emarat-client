@@ -16,6 +16,8 @@ import BoughtList from "../Pages/BoughtList/BoughtList";
 import MyReviews from "../Pages/MyReviews/MyReviews";
 import WishUpdate from "../Pages/WishUpdate/WishUpdate";
 import ManageUsers from "../Pages/ManageUsers/ManageUsers";
+import ManageReview from "../Pages/ManageReview/ManageReview";
+import AdminProfile from "../Pages/AdminProfile/AdminProfile";
 
 
  export const router = createBrowserRouter([
@@ -74,6 +76,14 @@ import ManageUsers from "../Pages/ManageUsers/ManageUsers";
         {
           path: '/dashboard/manageUsers',
           element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: '/dashboard/manageReviews',
+          element: <ManageReview></ManageReview>
+        },
+        {
+          path: '/dashboard/adminProfile',
+          element: <AdminProfile></AdminProfile>
         }
       ]
     }
