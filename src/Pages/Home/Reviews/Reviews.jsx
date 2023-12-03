@@ -15,9 +15,8 @@ const Reviews = () => {
     },[])
     return (
         <div className='my-20'>
-            <h3 className="text-5xl my-10 ml-20 font-bold">
-            See what others <br />
-             said about us
+            <h3 className="text-4xl text-sky-600 my-6 ml-20 text-center font-bold">
+            Reviews 
             </h3>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
        
@@ -27,7 +26,7 @@ const Reviews = () => {
             >
                 <div className='m-24 text-center'>
                     <img className='h-25 w-25 rounded-full' src={review?.image} alt="" />
-                    <h3 className='text-3xl'>{review?.name}</h3>
+                    <h3 className='text-3xl text-sky-600'>{review?.name}</h3>
                     <p>{review?.details}</p>
                 </div>
             </SwiperSlide>)
