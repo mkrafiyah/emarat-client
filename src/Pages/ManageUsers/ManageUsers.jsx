@@ -29,6 +29,22 @@ const ManageUsers = () => {
             }
         })
     }
+    //agent
+    const handleMakeAgent = user =>{
+        axiosSecure.patch(`/users/agent/${user._id}`)
+        .then(res=>{
+            if(res.data.modifiedCount > 0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You are Agent Now",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+    } 
     const handleDeleteUser = user =>{
         Swal.fire({
             title: "Are you sure?",
@@ -71,6 +87,7 @@ const ManageUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Agent</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -82,6 +99,12 @@ const ManageUsers = () => {
                                 <td>{user?.email}</td>
                                 <td>
                                    { user.role === 'admin' ? "Admin" : <button onClick={()=> handleMakeAdmin(user)}
+                                    className="btn btn-ghost">
+                                        <FaUsers className="text-xl"></FaUsers>
+                                    </button>}
+                                </td>
+                                <td>
+                                   { user.role === 'agent' ? "Agent" : <button onClick={()=> handleMakeAgent(user)}
                                     className="btn btn-ghost">
                                         <FaUsers className="text-xl"></FaUsers>
                                     </button>}

@@ -64,7 +64,44 @@ const Dashboard = () => {
                 } else if (userRole.role === 'agent') {
                     return (
                         <div>
-                            Aggent
+                            <div className="flex">
+                            <div className="w-64 min-h-screen bg-blue-400">
+                                <ul className="menu">
+
+                                    <li>
+                                        <NavLink to='/dashboard/agentProfile'>
+                                            <FaPerson></FaPerson>
+                                            Agent Profile</NavLink></li>
+                                    <li>
+                                        <NavLink to='/dashboard/agentAddedProperties'>
+                                            <FaShoppingCart></FaShoppingCart>
+                                            Agent Added Properties</NavLink></li>
+                                    <li>
+                                        <NavLink to='/dashboard/soldProperties'>
+                                            <FaBuilding></FaBuilding>
+                                            Property Sold</NavLink></li>
+                                    <li>
+                                        <NavLink to='/dashboard/requestedProperties'>
+                                            <FaBook></FaBook>
+                                             Requested Properties</NavLink></li>
+
+
+                                    <div className="divider"></div>
+                                    <li>
+                                        <NavLink to='/'>
+                                            <FaHome></FaHome>
+                                            Home</NavLink></li>
+
+
+                                </ul>
+
+
+                            </div>
+                            {/* dashboard content */}
+                            <div className="flex-1 p-8">
+                                <Outlet></Outlet>
+                            </div>
+                        </div>
                         </div>
                     )
                 } else {

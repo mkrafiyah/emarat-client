@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
-
-const AdminProfile = () => {
+const AgentProfile = () => {
     const {user} = useContext(AuthContext);
     console.log(user)
-  
     return (
         <div className="mx-auto max-w-lg my-20">
            <div className="card w-96 bg-base-100 shadow-xl">
@@ -24,4 +22,4 @@ const AdminProfile = () => {
     );
 };
 
-export default AdminProfile;
+export default AgentProfile;

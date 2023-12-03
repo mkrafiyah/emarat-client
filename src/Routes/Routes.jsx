@@ -18,6 +18,8 @@ import WishUpdate from "../Pages/WishUpdate/WishUpdate";
 import ManageUsers from "../Pages/ManageUsers/ManageUsers";
 import ManageReview from "../Pages/ManageReview/ManageReview";
 import AdminProfile from "../Pages/AdminProfile/AdminProfile";
+import AgentProfile from "../Pages/AgentProfile/AgentProfile";
+import AgentAddedProperties from "../Pages/AgentAdddedProperties/AgentAddedProperties";
 
 
  export const router = createBrowserRouter([
@@ -84,6 +86,14 @@ import AdminProfile from "../Pages/AdminProfile/AdminProfile";
         {
           path: '/dashboard/adminProfile',
           element: <AdminProfile></AdminProfile>
+        },
+        {
+          path: '/dashboard/agentProfile',
+          element: <AgentProfile></AgentProfile>
+        },
+        {
+          path: '/dashboard/agentAddedProperties',
+          element: <AgentAddedProperties></AgentAddedProperties>
         }
       ]
     }
