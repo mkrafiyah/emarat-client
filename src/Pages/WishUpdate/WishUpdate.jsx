@@ -13,7 +13,7 @@ const WishUpdate = () => {
     
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/wishUpdate/${params.id}`)
+        fetch(`https://emarat-server.vercel.app/wishUpdate/${params.id}`)
         .then(res=>res.json())
         .then(data=>setOfferWish(data))
     },[])

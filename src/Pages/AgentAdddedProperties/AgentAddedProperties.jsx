@@ -8,7 +8,7 @@ const AgentAddedProperties = () => {
     const [addedProperty, setAddedProperty] = useState([]);
     const params = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/wishes?email=${user?.email}`)
+        fetch(`https://emarat-server.vercel.app/wishes?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setAddedProperty(data))
     }, [])

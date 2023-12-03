@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [userRole, setUserRole] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/admin?email=${user?.email}`)
+        fetch(`https://emarat-server.vercel.app/users/admin?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setUserRole(data))
     }, [])

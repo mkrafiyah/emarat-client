@@ -13,7 +13,7 @@ const DetailPage = () => {
     const navigate = useNavigate();
     const axiosSecure = useAxiosSecure();
     useEffect(() => {
-        fetch(`http://localhost:5000/properties/${params.id}`)
+        fetch(`https://emarat-server.vercel.app/properties/${params.id}`)
             .then(res => res.json())
             .then(data => setDetailProperty(data))
     }, [])

@@ -6,7 +6,7 @@ const AllProperties = () => {
     const [propertiesAll, setPropertiesAll] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/properties')
+        fetch('https://emarat-server.vercel.app/properties')
         .then(res=>res.json())
         .then(data=>setPropertiesAll(data))
     },[])

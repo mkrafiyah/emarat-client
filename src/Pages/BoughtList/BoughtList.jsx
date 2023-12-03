@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const BoughtList = () => {
     const [offerList, setOfferList] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/wishBought')
+        fetch('https://emarat-server.vercel.app/wishBought')
         .then(res=>res.json())
         .then(data=>setOfferList(data))
     },[])
