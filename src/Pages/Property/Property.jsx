@@ -5,7 +5,7 @@ const Property = ({ property }) => {
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-sky-100 shadow-xl mb-10">
                 <figure><img className="w-full h-14" src={property?.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -21,7 +21,7 @@ const Property = ({ property }) => {
                 </div>
                 <div className="mx-5 mb-6 border">
                 <Link to={`/properties/${property?._id}`}>
-                <button className="btn btn-success w-full">Details</button>
+                <button className="btn bg-sky-600 text-white w-full">Details</button>
                 </Link>
                 </div>
             </div>
