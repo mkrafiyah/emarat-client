@@ -94,7 +94,7 @@ const DetailPage = () => {
 
     return (
         <div>
-            <div className="card w-2/3 mx-auto my-20 bg-base-100 shadow-xl">
+            <div className="card w-2/3 mx-auto my-20 bg-sky-100 shadow-xl">
                 <figure><img className="w-full h-14" src={detailProperty?.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -109,11 +109,11 @@ const DetailPage = () => {
                     </div>
                 </div>
                 <button onClick={() => handleAddToWishList(detailProperty)}
-                    className="btn btn-success">Add To Wishlist</button>
+                    className="btn bg-sky-600 text-white">Add To Wishlist</button>
             </div>
             {/* review */}
 
-            <form onSubmit={handleAddReview} className="grid grid-cols-1 gap-6 mx-auto w-2/5 border bg-blue-300 p-10">
+            <form onSubmit={handleAddReview} className="grid grid-cols-1 gap-6 mx-auto w-2/5 border bg-blue-300 p-10 mb-10">
                 <label className="label">
                     <span className="label-text">Title</span>
                 </label>
