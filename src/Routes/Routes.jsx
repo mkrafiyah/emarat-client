@@ -20,6 +20,7 @@ import ManageReview from "../Pages/ManageReview/ManageReview";
 import AdminProfile from "../Pages/AdminProfile/AdminProfile";
 import AgentProfile from "../Pages/AgentProfile/AgentProfile";
 import AgentAddedProperties from "../Pages/AgentAdddedProperties/AgentAddedProperties";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 
  export const router = createBrowserRouter([
@@ -52,11 +53,11 @@ import AgentAddedProperties from "../Pages/AgentAdddedProperties/AgentAddedPrope
     },
     {
       path: '/dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
         {
           path: '/dashboard/wishlist',
-          element: <WishLists></WishLists>
+          element:  <WishLists></WishLists>
         },
         {
           path: '/dashboard/wishUpdate/:id',
